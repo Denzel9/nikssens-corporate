@@ -1,6 +1,7 @@
 "use client";
 
 import Box from "@mui/material/Box";
+import { CookieConsentBanner } from "@/widgets/cookie-consent";
 import { Header } from "@/widgets/header";
 import { Footer } from "@/widgets/footer";
 
@@ -24,6 +25,7 @@ export function PageShell({ children }: PageShellProps) {
         {children}
       </Box>
       <Footer />
+      <CookieConsentBanner />
     </Box>
   );
 }
