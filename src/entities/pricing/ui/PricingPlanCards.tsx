@@ -34,12 +34,12 @@ function PlanCard({ plan, showCardCta }: { plan: PricingPlan; showCardCta: boole
         height: 550,
         display: "flex",
         border: "1px solid",
-        borderRadius: "32px",
+        borderRadius: "24px",
         color: "text.primary",
         p: { xs: 3, md: 3.5 },
         flexDirection: "column",
         bgcolor: plan.highlighted ? "primary.main" : "background.paper",
-        borderColor: plan.highlighted ? "primary.main" : "rgba(255,255,255,0.08)",
+        borderColor: plan.highlighted ? "primary.main" : "rgba(255, 255, 255, 0.12)",
       }}
     >
       <Stack spacing={1}>

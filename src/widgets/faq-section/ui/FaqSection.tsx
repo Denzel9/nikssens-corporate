@@ -22,19 +22,20 @@ export function FaqSection() {
         {FAQS.map((item) => (
           <Accordion
             key={item.q}
+
             disableGutters
             elevation={0}
             sx={{
-              bgcolor: "background.paper",
-              border: "1px solid rgba(255,255,255,0.08)",
-              borderRadius: "32px !important",
               mb: 1.5,
-              "&::before": { display: "none" },
               overflow: "hidden",
+              bgcolor: "background.paper",
+              borderRadius: "24px !important",
+              "&::before": { display: "none" },
+              border: "1px solid rgba(255, 255, 255, 0.12)",
             }}
           >
-            <AccordionSummary expandIcon={<ExpandMoreIcon sx={{ color: "text.secondary" }} />}>
-              <Typography sx={{ fontWeight: 600, fontSize: 16, pr: 2 }}>{item.q}</Typography>
+            <AccordionSummary expandIcon={<ExpandMoreIcon sx={{ color: "text.secondary", py: 3.5 }} />}>
+              <Typography sx={{ fontSize: 16, pr: 2 }}>{item.q}</Typography>
             </AccordionSummary>
             <AccordionDetails>
               <Typography sx={{ color: "text.secondary", fontSize: 15, lineHeight: 1.7 }}>

@@ -21,7 +21,7 @@ const BrowserChrome = ({ children }: { children: React.ReactNode }) => (
         px: 2,
         py: 1.25,
         alignItems: "center",
-        borderBottom: "1px solid rgba(255,255,255,0.08)",
+        borderBottom: "1px solid rgba(255, 255, 255, 0.12)",
         bgcolor: "#171717",
       }}
     >

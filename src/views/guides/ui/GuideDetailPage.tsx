@@ -79,7 +79,7 @@ export function GuideDetailPage({ guide }: GuideDetailPageProps) {
               p: { xs: 2.5, md: 3 },
               borderRadius: "24px",
               bgcolor: "background.paper",
-              border: "1px solid rgba(255,255,255,0.08)",
+              border: "1px solid rgba(255, 255, 255, 0.12)",
             }}
           >
             <Typography sx={{ fontWeight: 700, fontSize: 16, mb: 0.75 }}>
@@ -103,9 +103,9 @@ export function GuideDetailPage({ guide }: GuideDetailPageProps) {
                 key={step.title}
                 sx={{
                   p: { xs: 3, md: 3.5 },
-                  borderRadius: "32px",
+                  borderRadius: "24px",
                   bgcolor: "background.paper",
-                  border: "1px solid rgba(255,255,255,0.08)",
+                  border: "1px solid rgba(255, 255, 255, 0.12)",
                 }}
               >
                 <Stack
@@ -172,7 +172,7 @@ export function GuideDetailPage({ guide }: GuideDetailPageProps) {
                         p: 2,
                         borderRadius: "20px",
                         bgcolor: "background.paper",
-                        border: "1px solid rgba(255,255,255,0.08)",
+                        border: "1px solid rgba(255, 255, 255, 0.12)",
                         textDecoration: "none",
                         color: "inherit",
                         "&:hover": { borderColor: "primary.main" },

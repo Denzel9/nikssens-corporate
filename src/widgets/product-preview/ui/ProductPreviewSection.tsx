@@ -115,7 +115,7 @@ export function ProductPreviewSection() {
           })}
         </Stack>
 
-        <Box sx={{ width: "100%", height: { xs: 250, md: 650 }, position: "relative", borderRadius: "32px", overflow: "hidden" }}>
+        <Box sx={{ width: "100%", height: { xs: 250, md: 650 }, position: "relative", borderRadius: "24px", overflow: "hidden" }}>
           <Image src="/main_page.png" alt="Product Preview" fill />
         </Box>
 

@@ -20,9 +20,9 @@ const MetricCard = ({ metric, sx }: { metric: typeof metrics[number], sx?: SxPro
     <Box
       sx={{
         p: { xs: 3, md: 3.5 },
-        borderRadius: "32px",
+        borderRadius: "24px",
         bgcolor: "background.paper",
-        border: "1px solid rgba(255,255,255,0.08)",
+        border: "1px solid rgba(255, 255, 255, 0.12)",
         height: "100%",
         ...sx,
       }}

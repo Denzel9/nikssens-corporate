@@ -57,7 +57,7 @@ const TopicCard = ({ article }: { article: Article }) => (
     href={`/knowledge/${article.slug}`}
     sx={{
       p: { xs: 3, md: 3.5 },
-      borderRadius: "32px",
+      borderRadius: "24px",
       bgcolor: "background.paper",
       display: "flex",
       flexDirection: { xs: "column", sm: "row" },
@@ -183,7 +183,7 @@ export function KnowledgePage() {
                 </Typography>
                 <Box
                   sx={{
-                    borderRadius: "32px",
+                    borderRadius: "24px",
                     bgcolor: "background.paper",
                     overflow: "hidden",
                   }}
@@ -202,7 +202,7 @@ export function KnowledgePage() {
                         textDecoration: "none",
                         color: "inherit",
                         borderTop: index === 0 ? "none" : "1px solid",
-                        borderColor: "rgba(255,255,255,0.08)",
+                        borderColor: "rgba(255, 255, 255, 0.12)",
                         transition: "background-color 0.2s ease",
                         "&:hover": {
                           bgcolor: "rgba(255,255,255,0.03)",

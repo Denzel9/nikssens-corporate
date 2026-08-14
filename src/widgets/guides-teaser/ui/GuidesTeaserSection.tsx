@@ -62,9 +62,9 @@ export function GuidesTeaserSection() {
               href={`/guides/${guide.slug}`}
               sx={{
                 p: { xs: 2.5, md: 3 },
-                borderRadius: "32px",
+                borderRadius: "24px",
                 bgcolor: "background.paper",
-                border: "1px solid rgba(255,255,255,0.08)",
+                border: "1px solid rgba(255, 255, 255, 0.12)",
                 textDecoration: "none",
                 color: "inherit",
                 height: "100%",

@@ -34,9 +34,9 @@ const TrustCard = ({ item, sx }: { item: typeof items[number], sx?: SxProps<Them
       sx={{
         height: "100%",
         p: { xs: 3, md: 3.5 },
-        borderRadius: "32px",
+        borderRadius: "24px",
         bgcolor: "background.paper",
-        border: "1px solid rgba(255,255,255,0.08)",
+        border: "1px solid rgba(255, 255, 255, 0.12)",
         ...sx,
       }}
     >
@@ -47,7 +47,7 @@ const TrustCard = ({ item, sx }: { item: typeof items[number], sx?: SxProps<Them
           borderRadius: "50%",
           display: "grid",
           placeItems: "center",
-          bgcolor: "rgba(255,255,255,0.08)",
+          bgcolor: "rgba(255, 255, 255, 0.12)",
           color: "primary.main",
           mb: 2,
         }}

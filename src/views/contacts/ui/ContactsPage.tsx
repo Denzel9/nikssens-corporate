@@ -51,7 +51,7 @@ export function ContactsPage() {
                   key={item.label}
                   sx={{
                     p: 3,
-                    borderRadius: "32px",
+                    borderRadius: "24px",
                     bgcolor: "background.paper",
                   }}
                 >
@@ -70,7 +70,7 @@ export function ContactsPage() {
               onSubmit={handleSubmit}
               sx={{
                 p: { xs: 3, md: 4 },
-                borderRadius: "32px",
+                borderRadius: "24px",
                 bgcolor: "background.paper",
               }}
             >

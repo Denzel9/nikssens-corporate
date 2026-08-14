@@ -40,7 +40,7 @@ export function IntegrationsSection() {
                 py: 1.25,
                 borderRadius: 999,
                 bgcolor: "background.paper",
-                border: "1px solid rgba(255,255,255,0.08)",
+                border: "1px solid rgba(255, 255, 255, 0.12)",
               }}
             >
               <Typography sx={{ fontWeight: 600, fontSize: 14 }}>{platform}</Typography>

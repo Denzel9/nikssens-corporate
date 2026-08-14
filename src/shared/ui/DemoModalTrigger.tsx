@@ -50,7 +50,7 @@ export function DemoModalTrigger({
             sx: {
               bgcolor: "#121212",
               borderRadius: "24px",
-              border: "1px solid rgba(255,255,255,0.08)",
+              border: "1px solid rgba(255, 255, 255, 0.12)",
               overflow: "hidden",
             },
           },
@@ -63,7 +63,7 @@ export function DemoModalTrigger({
             justifyContent: "space-between",
             px: 2.5,
             py: 1.5,
-            borderBottom: "1px solid rgba(255,255,255,0.08)",
+            borderBottom: "1px solid rgba(255, 255, 255, 0.12)",
           }}
         >
           <Box>

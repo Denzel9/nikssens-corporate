@@ -39,9 +39,10 @@ export function PainSection() {
               sx={{
                 height: "100%",
                 p: { xs: 3, md: 3.5 },
-                borderRadius: "32px",
+                borderRadius: "24px",
                 bgcolor: "background.paper",
-                border: "1px solid rgba(255,255,255,0.08)",
+                border: "1px solid rgba(255, 255, 255, 0.12)",
+                // rgba(255,255,255,0.08)
               }}
             >
               <Typography sx={{ fontWeight: 700, fontSize: 20, mb: 2.5, color: "text.secondary" }}>
@@ -64,7 +65,7 @@ export function PainSection() {
               sx={{
                 height: "100%",
                 p: { xs: 3, md: 3.5 },
-                borderRadius: "32px",
+                borderRadius: "24px",
                 bgcolor: "primary.main",
               }}
             >

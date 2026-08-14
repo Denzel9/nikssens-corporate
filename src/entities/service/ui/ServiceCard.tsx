@@ -34,11 +34,11 @@ export function ServiceCard({ service, sx }: ServiceCardProps) {
       sx={{
         height: "100%",
         p: { xs: 3, md: 3.5 },
-        borderRadius: "32px",
+        borderRadius: "24px",
         bgcolor: "background.paper",
         color: "text.primary",
         border: "1px solid",
-        borderColor: "rgba(255,255,255,0.08)",
+        borderColor: "rgba(255, 255, 255, 0.12)",
         transition:
           "transform 0.25s ease, background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease",
         "&:hover": {

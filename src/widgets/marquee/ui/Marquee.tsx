@@ -8,7 +8,7 @@ import Image from "next/image";
 const phrases = [
   "Поиск → отклик → задача → публикация",
   "Один контур вместо чатов и таблиц",
-  "Прозрачные статусы для бренда и исполнительа",
+  "Прозрачные статусы для бренда и исполнителя",
   "Контроль сроков и «что горит»",
 ];
 
@@ -42,8 +42,8 @@ export function Marquee() {
       aria-hidden
       sx={{
         py: 2.5,
-        bgcolor: "#111111",
-        borderY: "1px solid rgba(255,255,255,0.06)",
+        bgcolor: "background.default",
+        borderY: "1px solid rgba(255, 255, 255, 0.12)",
         overflow: "hidden",
         mb: { xs: 6, md: 10 },
       }}
@@ -55,6 +55,7 @@ export function Marquee() {
           animation: "marqueeScroll 28s linear infinite",
         }}
       >
+        <MarqueeTrack />
         <MarqueeTrack />
         <MarqueeTrack />
       </Box>

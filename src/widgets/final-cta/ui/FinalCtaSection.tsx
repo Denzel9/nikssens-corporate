@@ -15,9 +15,9 @@ export function FinalCtaSection() {
         <Box
           sx={{
             p: { xs: 3, md: 5 },
-            borderRadius: "32px",
+            borderRadius: "24px",
             bgcolor: "background.paper",
-            border: "1px solid rgba(255,255,255,0.08)",
+            border: "1px solid rgba(255, 255, 255, 0.12)",
           }}
         >
           <Stack
@@ -30,7 +30,7 @@ export function FinalCtaSection() {
                 variant="h2"
                 sx={{ fontSize: { xs: "1.75rem", md: "2.5rem" }, mb: 1.5 }}
               >
-                Готовы сотрудничать в одном контуре?
+                Готовы сотрудничать в едином контуре?
               </Typography>
               <Typography sx={{ color: "text.secondary", fontSize: 16, lineHeight: 1.7, mb: 3 }}>
                 Войдите, чтобы публиковать объявления, принимать отклики и вести задачи.

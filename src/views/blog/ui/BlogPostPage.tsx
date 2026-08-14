@@ -56,7 +56,7 @@ export function BlogPostPage({ post }: BlogPostPageProps) {
                 key={section.title}
                 sx={{
                   p: { xs: 3, md: 3.5 },
-                  borderRadius: "32px",
+                  borderRadius: "24px",
                   bgcolor: "background.paper",
                 }}
               >

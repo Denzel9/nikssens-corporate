@@ -23,7 +23,7 @@ const PostCard = ({ post }: { post: BlogPost }) => (
     href={`/blog/${post.slug}`}
     sx={{
       p: { xs: 3, md: 3.5 },
-      borderRadius: "32px",
+      borderRadius: "24px",
       bgcolor: "background.paper",
       display: "flex",
       flexDirection: { xs: "column", sm: "row" },

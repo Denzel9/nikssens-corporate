@@ -13,7 +13,7 @@ export function StatCard({ stat }: StatCardProps) {
     <Box
       sx={{
         p: { xs: 3, md: 3.5 },
-        borderRadius: "32px",
+        borderRadius: "24px",
         bgcolor: "background.paper",
         height: "100%",
       }}

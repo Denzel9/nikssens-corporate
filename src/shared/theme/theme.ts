@@ -10,7 +10,8 @@ export const theme = createTheme({
   palette: {
     mode: "dark",
     background: {
-      default: "#0D0D0D",
+      // default: "#0D0D0D",
+      default: "#1F2426",
       paper: "#1A1A1A",
     },
     text: {
@@ -19,6 +20,7 @@ export const theme = createTheme({
     },
     primary: {
       main: BASE_COLOR,
+      light: BASE_LIGHT_COLOR,
       contrastText: "#0D0D0D",
     },
     divider: "rgba(255, 255, 255, 0.12)",
@@ -47,7 +49,8 @@ export const theme = createTheme({
     MuiCssBaseline: {
       styleOverrides: {
         body: {
-          backgroundColor: "#0D0D0D",
+          backgroundColor: "#1F2426",
+          // backgroundColor: "#0D0D0D",
           color: "#FFFFFF",
         },
       },

@@ -32,7 +32,7 @@ export function Footer() {
         mt: "auto",
         borderTop: "1px solid",
         borderColor: "divider",
-        bgcolor: "#0A0A0A",
+        bgcolor: "background.paper",
         pt: { xs: 6, md: 8 },
         pb: { xs: 4, md: 5 },
       }}

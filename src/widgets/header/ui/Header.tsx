@@ -24,9 +24,10 @@ export function Header() {
         position="sticky"
         elevation={0}
         sx={{
-          bgcolor: "rgba(13, 13, 13, 0.85)",
+          // bgcolor: "rgba(13, 13, 13, 0.85)",
+          bgcolor: "background.default",
           backdropFilter: "blur(12px)",
-          borderBottom: "1px solid transparent",
+          borderBottom: "1px solid rgba(255, 255, 255, 0.12)",
         }}
       >
         <Container maxWidth="lg">
@@ -60,9 +61,8 @@ export function Header() {
                   color="text.primary"
                   sx={{
                     fontSize: 15,
-                    fontWeight: 500,
-                    opacity: 0.9,
-                    "&:hover": { opacity: 1, color: "primary.main" },
+                    transition: "color 0.3s ease",
+                    "&:hover": { color: "primary.light" },
                   }}
                 >
                   {link.label}
