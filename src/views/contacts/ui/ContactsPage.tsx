@@ -58,6 +58,7 @@ export function ContactsPage() {
                   <Typography sx={{ color: "text.secondary", fontSize: 14, mb: 0.75 }}>
                     {item.label}
                   </Typography>
+
                   <Typography sx={{ fontWeight: 700, fontSize: 18 }}>{item.value}</Typography>
                 </Box>
               ))}
