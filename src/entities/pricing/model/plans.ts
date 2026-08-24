@@ -1,12 +1,9 @@
 import { authLink } from "@/shared/config";
 
-export type PricingAudience = "personal" | "corporate";
-
 export type CorporateSeatTier = {
-  /** Короткий лейбл, например «до 5» */
   label: string;
-  /** Полное описание лимита менеджеров */
   managers: string;
+  priceRub: number;
 };
 
 export type PricingPlan = {
@@ -17,17 +14,20 @@ export type PricingPlan = {
   highlighted: boolean;
   cta: string;
   href: string;
+  withSeatSelect?: boolean;
 };
 
-/** Лимиты менеджеров для корпоративного Prime */
 export const corporateSeatTiers: CorporateSeatTier[] = [
-  { label: "2–3", managers: "2–3 менеджера" },
-  { label: "до 5", managers: "до 5 менеджеров" },
-  { label: "до 10", managers: "до 10 менеджеров" },
-  { label: "до 20", managers: "до 20 менеджеров" },
-  { label: "до 40", managers: "до 40 менеджеров" },
-  { label: "до 100", managers: "до 100 менеджеров" },
+  { label: "до 2", managers: "до 2 менеджеров", priceRub: 990 },
+  { label: "до 5", managers: "до 5 менеджеров", priceRub: 3_990 },
+  { label: "до 10", managers: "до 10 менеджеров", priceRub: 6_990 },
+  { label: "до 20", managers: "до 20 менеджеров", priceRub: 12_990 },
+  { label: "до 40", managers: "до 40 менеджеров", priceRub: 24_990 },
+  { label: "до 100", managers: "до 100 менеджеров", priceRub: 48_990 },
 ];
+
+export const formatMonthlyPrice = (priceRub: number) =>
+  `${priceRub.toLocaleString("ru-RU")} ₽/мес`;
 
 const personalPrimeFeatures = [
   "CRM задач: список, канбан, таблица",
@@ -45,7 +45,7 @@ const corporatePrimeFeatures = [
   "Отчётность по команде",
 ];
 
-export const personalPricingPlans: PricingPlan[] = [
+export const pricingPlans: PricingPlan[] = [
   {
     name: "Бесплатный",
     price: "Бесплатно",
@@ -61,45 +61,33 @@ export const personalPricingPlans: PricingPlan[] = [
     href: authLink.href,
   },
   {
-    name: "Персональный Prime",
-    price: "Подписка",
+    name: "Prime",
+    price: formatMonthlyPrice(590),
     description:
       "Для любого пользователя: CRM и расширенные сценарии в личном аккаунте. Купить может кто угодно.",
     features: personalPrimeFeatures,
     highlighted: true,
-    cta: "Подключить Prime",
+    cta: "Подключить",
     href: authLink.href,
+  },
+  {
+    name: "Prime Pro",
+    price: formatMonthlyPrice(corporateSeatTiers[0].priceRub),
+    description:
+      "Компания покупает workspace и добавляет менеджеров в выбранном лимите.",
+    features: corporatePrimeFeatures,
+    highlighted: false,
+    cta: "Подключить",
+    href: authLink.href,
+    withSeatSelect: true,
   },
 ];
 
-/** Отдельная карточка на каждый лимит менеджеров */
-export const corporatePricingPlans: PricingPlan[] = corporateSeatTiers.map((tier, index) => ({
-  name: tier.managers,
-  price: "Подписка",
-  description:
-    "Корпоративный Prime: компания покупает workspace и добавляет менеджеров в выбранном лимите.",
-  features: corporatePrimeFeatures,
-  highlighted: index === 1,
-  cta: "Подключить для компании",
-  href: authLink.href,
-}));
-
-export const pricingPlansByAudience: Record<PricingAudience, PricingPlan[]> = {
-  personal: personalPricingPlans,
-  corporate: corporatePricingPlans,
-};
-
-/** Все планы (для обратной совместимости) */
-export const pricingPlans: PricingPlan[] = [
-  ...personalPricingPlans,
-  ...corporatePricingPlans,
-];
-
 export const pricingPageDescription =
-  "Бесплатный аккаунт, персональный Prime и корпоративный Prime с лимитами менеджеров. CRM открывается с подпиской; команда и менеджеры — на корпоративном тарифе.";
+  "Бесплатный аккаунт, Prime и Prime Pro с лимитами менеджеров. CRM открывается с подпиской; команда и менеджеры — на Prime Pro.";
 
 export const pricingTeaserDescription =
-  "Переключайте персональный и корпоративный тариф. У компании — варианты по числу менеджеров.";
+  "Три тарифа: бесплатный, Prime и Prime Pro. У компании — выбор числа менеджеров.";
 
 export const pricingFootnote =
-  "Чтобы подключить подписку, сначала авторизуйтесь, подтвердите почту, затем оформите тариф в настройках биллинга. Корпоративный Prime оформляет компания и выбирает лимит менеджеров.";
+  "Чтобы подключить подписку, сначала авторизуйтесь, подтвердите почту, затем оформите тариф в настройках биллинга. Prime Pro оформляет компания и выбирает лимит менеджеров.";

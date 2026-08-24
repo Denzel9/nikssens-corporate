@@ -10,5 +10,7 @@ export {
   getGuideBySlug,
   getGuideSlugs,
   getGuidesByAudience,
+  getFeaturedGuides,
+  featuredGuideSlugs,
   guides,
 } from "./model/guides";

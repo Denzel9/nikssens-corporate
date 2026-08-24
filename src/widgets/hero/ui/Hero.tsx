@@ -5,7 +5,7 @@ import Container from "@mui/material/Container";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import { authLink, brand } from "@/shared/config";
-import { DemoModalTrigger, GradientButton } from "@/shared/ui";
+import { GradientButton } from "@/shared/ui";
 
 export function Hero() {
   return (
@@ -61,7 +61,7 @@ export function Hero() {
             >
               Войти
             </GradientButton>
-            <DemoModalTrigger fullWidth />
+            {/* <DemoModalTrigger fullWidth /> */}
           </Stack>
         </Stack>
       </Container>

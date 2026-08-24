@@ -26,6 +26,7 @@ const chips: { id: AudienceFilter; label: string }[] = [
   { id: "all", label: "Все" },
   { id: "brand", label: "Бренд" },
   { id: "creator", label: "Исполнитель" },
+  { id: "manager", label: "Менеджер" },
   { id: "agency", label: "Агентство" },
   { id: "prime", label: "Prime" },
 ];

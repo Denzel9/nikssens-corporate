@@ -1,4 +1,4 @@
-export type GuideAudience = "brand" | "creator" | "agency";
+export type GuideAudience = "brand" | "creator" | "agency" | "manager";
 
 export type GuideMockVariant =
   | "feed"
@@ -42,4 +42,5 @@ export const guideAudienceLabels: Record<GuideAudience, string> = {
   brand: "Бренд",
   creator: "Исполнитель",
   agency: "Агентство",
+  manager: "Менеджер",
 };

@@ -6,11 +6,11 @@ import Container from "@mui/material/Container";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import Link from "next/link";
-import { guideAudienceLabels, guides } from "@/entities/guide";
+import { guideAudienceLabels, getFeaturedGuides } from "@/entities/guide";
 import { SectionHeading } from "@/shared/ui";
 
 export function GuidesTeaserSection() {
-  const items = guides.slice(0, 3);
+  const items = getFeaturedGuides();
 
   return (
     <Box id="guides" component="section" sx={{ pb: { xs: 8, md: 12 } }}>
@@ -51,7 +51,11 @@ export function GuidesTeaserSection() {
         <Box
           sx={{
             display: "grid",
-            gridTemplateColumns: { xs: "1fr", md: "repeat(3, 1fr)" },
+            gridTemplateColumns: {
+              xs: "1fr",
+              sm: "repeat(2, 1fr)",
+              lg: "repeat(3, 1fr)",
+            },
             gap: 2,
           }}
         >

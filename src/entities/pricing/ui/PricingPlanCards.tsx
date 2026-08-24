@@ -2,36 +2,48 @@
 
 import { useState } from "react";
 import Box from "@mui/material/Box";
+import MenuItem from "@mui/material/MenuItem";
 import Stack from "@mui/material/Stack";
+import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 import CheckRoundedIcon from "@mui/icons-material/CheckRounded";
 import {
-  pricingPlansByAudience,
-  type PricingAudience,
+  corporateSeatTiers,
+  formatMonthlyPrice,
+  pricingPlans,
   type PricingPlan,
 } from "@/entities/pricing";
 import { GradientButton, OutlinedPillButton } from "@/shared/ui";
-import { Chip } from "@mui/material";
 
 type PricingPlanCardsProps = {
   /** Показывать CTA на каждой карточке (страница тарифов). */
   showCardCta?: boolean;
-  defaultAudience?: PricingAudience;
 };
 
-const AUDIENCE_OPTIONS: { value: PricingAudience; label: string }[] = [
-  { value: "personal", label: "Персональный" },
-  { value: "corporate", label: "Корпоративный" },
-];
+function PlanCard({
+  plan,
+  showCardCta,
+  seatTierIndex,
+  onSeatTierChange,
+}: {
+  plan: PricingPlan;
+  showCardCta: boolean;
+  seatTierIndex: number;
+  onSeatTierChange: (index: number) => void;
+}) {
+  const displayPrice = plan.withSeatSelect
+    ? formatMonthlyPrice(corporateSeatTiers[seatTierIndex]?.priceRub ?? 990)
+    : plan.price;
 
-function PlanCard({ plan, showCardCta }: { plan: PricingPlan; showCardCta: boolean }) {
   return (
     <Box
       sx={{
         gap: 2.5,
-        width: { xs: '100%', md: 400 },
-        minWidth: { xs: '100%', md: 400 },
-        height: 550,
+        width: { xs: "100%", md: "100%" },
+        minWidth: { xs: "100%", sm: 280 },
+        maxWidth: { md: 400 },
+        flex: { md: "1 1 0" },
+        height: { md: 580 },
         display: "flex",
         border: "1px solid",
         borderRadius: "24px",
@@ -51,7 +63,7 @@ function PlanCard({ plan, showCardCta }: { plan: PricingPlan; showCardCta: boole
             fontSize: { xs: 28, md: 32 },
           }}
         >
-          {plan.price}
+          {displayPrice}
         </Typography>
         <Typography
           sx={{
@@ -72,6 +84,32 @@ function PlanCard({ plan, showCardCta }: { plan: PricingPlan; showCardCta: boole
           </Stack>
         ))}
       </Stack>
+
+      {plan.withSeatSelect && (
+        <TextField
+          select
+          fullWidth
+          size="small"
+          label="Менеджеры"
+          value={seatTierIndex}
+          onChange={(event) => onSeatTierChange(Number(event.target.value))}
+          sx={{
+            "& .MuiOutlinedInput-root": {
+              borderRadius: "12px",
+              bgcolor: plan.highlighted ? "rgba(0,0,0,0.12)" : "rgba(255,255,255,0.04)",
+            },
+            "& .MuiInputLabel-root": {
+              color: plan.highlighted ? "text.primary" : "text.secondary",
+            },
+          }}
+        >
+          {corporateSeatTiers.map((tier, index) => (
+            <MenuItem key={tier.label} value={index}>
+              {tier.managers} — {formatMonthlyPrice(tier.priceRub)}
+            </MenuItem>
+          ))}
+        </TextField>
+      )}
 
       {showCardCta &&
         (plan.highlighted ? (
@@ -101,73 +139,28 @@ function PlanCard({ plan, showCardCta }: { plan: PricingPlan; showCardCta: boole
   );
 }
 
-export function PricingPlanCards({
-  showCardCta = true,
-  defaultAudience = "personal",
-}: PricingPlanCardsProps) {
-  const [audience, setAudience] = useState<PricingAudience>(defaultAudience);
-  const plans = pricingPlansByAudience[audience];
-  const isCorporate = audience === "corporate";
+export function PricingPlanCards({ showCardCta = true }: PricingPlanCardsProps) {
+  const [seatTierIndex, setSeatTierIndex] = useState(0);
 
   return (
-    <Stack spacing={3} sx={{ alignItems: 'center' }}>
-      <Box
-        role="tablist"
-        aria-label="Тип тарифа"
-        sx={{
-          mx: "auto",
-          display: "inline-flex",
-          p: 0.5,
-          gap: 0.5,
-          width: 'fit-content',
-          borderRadius: "999px",
-          border: "1px solid",
-          borderColor: "rgba(255,255,255,0.12)",
-          bgcolor: "rgba(255,255,255,0.04)",
-        }}
-      >
-        {AUDIENCE_OPTIONS.map((option) => {
-          const selected = audience === option.value;
-          return (
-            <Box
-              key={option.value}
-              component="button"
-              type="button"
-              role="tab"
-              aria-selected={selected}
-              onClick={() => setAudience(option.value)}
-              sx={{
-                cursor: "pointer",
-                border: "none",
-                px: { xs: 2.25, md: 3 },
-                py: 1.1,
-                borderRadius: "999px",
-                fontSize: 14,
-                fontWeight: 600,
-                fontFamily: "inherit",
-                lineHeight: 1.2,
-                transition: "background-color 0.15s ease, color 0.15s ease",
-                color: selected ? "white" : "text.secondary",
-                bgcolor: selected ? "primary.main" : "transparent",
-                "&:hover": {
-                  color: selected ? "white" : "text.primary",
-                  bgcolor: selected ? "primary.main" : "rgba(255,255,255,0.06)",
-                },
-              }}
-            >
-              {option.label}
-            </Box>
-          );
-        })}
-      </Box>
-
-      <Stack spacing={2.5} direction="row" sx={{ justifyContent: { xs: 'start', md: isCorporate ? "start" : "center" }, overflowX: 'scroll', width: '100%', scrollbarWidth: 'none' }}>
-        {plans.map((plan) => (
-          <PlanCard key={plan.name} plan={plan} showCardCta={showCardCta} />
-        ))}
-      </Stack>
-
-      <Chip sx={{ display: { xs: 'flex', md: 'none' }, color: 'text.secondary' }} label={`${plans.length} ${isCorporate ? 'вариантов' : 'варианта'}`} />
+    <Stack
+      spacing={2.5}
+      direction={{ xs: "column", md: "row" }}
+      sx={{
+        justifyContent: "center",
+        alignItems: { xs: "stretch", md: "stretch" },
+        width: "100%",
+      }}
+    >
+      {pricingPlans.map((plan) => (
+        <PlanCard
+          key={plan.name}
+          plan={plan}
+          showCardCta={showCardCta}
+          seatTierIndex={seatTierIndex}
+          onSeatTierChange={setSeatTierIndex}
+        />
+      ))}
     </Stack>
   );
 }

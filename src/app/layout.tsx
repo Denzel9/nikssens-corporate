@@ -11,7 +11,7 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Nikssens — коллаборации брендов и исполнителей",
+  title: "Nikssens — сотрудничество брендов и исполнителей",
   description:
     "Платформа, где бренды находят исполнителей и ведут работу от объявления до публикации: поиск, отклик, задача, чат и результат в одном месте.",
   robots: {

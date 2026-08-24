@@ -5,7 +5,7 @@ import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
-import { DemoModalTrigger, SectionHeading } from "@/shared/ui";
+import { SectionHeading } from "@/shared/ui";
 import Image from "next/image";
 
 type PreviewTab = {
@@ -13,10 +13,9 @@ type PreviewTab = {
   label: string;
   caption: string;
   audience: string;
-  content: "feed" | "chat" | "dashboard" | "task" | "responses" | 'favorites' | 'responses';
+  content: "feed" | "chat" | "dashboard" | "task" | "responses" | 'favorites' | 'responses' | 'publications' | 'archive' | 'templates' | 'executors' | 'calendar' | 'tasks' | 'profile' | 'create' | 'my-publications';
 };
 
-// TODO: add more tabs
 const tabs: PreviewTab[] = [
   {
     id: "home",
@@ -46,6 +45,13 @@ const tabs: PreviewTab[] = [
     content: "responses",
   },
   {
+    id: "my-publications",
+    label: "Мои публикации",
+    caption: "Список моих публикаций",
+    audience: "Для бренда и исполнителя",
+    content: "my-publications",
+  },
+  {
     id: "dashboard",
     label: "Дашборд",
     caption: "Панель управления",
@@ -53,11 +59,67 @@ const tabs: PreviewTab[] = [
     content: "dashboard",
   },
   {
+    id: "tasks",
+    label: "Задачи",
+    caption: "Список задач",
+    audience: "канбан, таблица или карточки и многое другое",
+    content: "tasks",
+  },
+  {
+    id: "calendar",
+    label: "Календарь",
+    caption: "Календарь задач",
+    audience: "Календарь задач",
+    content: "calendar",
+  },
+  {
+    id: "executors",
+    label: "Исполнители",
+    caption: "Список исполнителей",
+    audience: "Список исполнителей с количеством задач и откликами",
+    content: "executors",
+  },
+  {
+    id: "publications",
+    label: "Публикации",
+    caption: "Список публикаций",
+    audience: "Список публикаций с отчетами и ссылками на посты",
+    content: "publications",
+  },
+  {
+    id: "archive",
+    label: "Архив",
+    caption: "Список архивированных записей",
+    audience: "Не актуальные задачи и обьявления",
+    content: "archive",
+  },
+  {
+    id: "templates",
+    label: "Шаблоны",
+    caption: "Список шаблонов",
+    audience: "Шаблоны для быстрого создания задач, объявлений и медиафайлов",
+    content: "templates",
+  },
+  {
     id: "task",
     label: "Задача",
     caption: "Статусы, комментарии и несколько исполнителей",
     audience: "Мультизадачи · Prime",
     content: "task",
+  },
+  {
+    id: "profile",
+    label: "Профиль",
+    caption: "Профиль исполнителя",
+    audience: "Профиль исполнителя с информацией о нем",
+    content: "profile",
+  },
+  {
+    id: "create",
+    label: "Создание объявления",
+    caption: "Создание объявления",
+    audience: "Создание объявления с информацией о нем",
+    content: "create",
   }
 
 ];
@@ -80,12 +142,12 @@ export function ProductPreviewSection() {
         >
           <SectionHeading
             title="Продукт как на экране"
-            description="Экраны Nikssens: лента, CRM, задача и отклики. Ниже — интерактивное превью; полное демо открывается по кнопке."
+            description="Экраны Nikssens: лента, CRM, задача и отклики. Ниже — интерактивное превью."
           />
-          <DemoModalTrigger label="2 минуты о продукте" />
+          {/* <DemoModalTrigger label="2 минуты о продукте" /> */}
         </Stack>
 
-        <Stack direction="row" spacing={1} sx={{ mb: 2, gap: 1, overflowX: "auto", scrollbarWidth: "none" }}>
+        <Stack direction="row" spacing={1} sx={{ mb: 2, gap: 1, width: "100%", overflowX: "auto", scrollbarWidth: "none" }}>
           {tabs.map((tab) => {
             const selected = tab.id === activeId;
 
@@ -96,7 +158,8 @@ export function ProductPreviewSection() {
                 type="button"
                 onClick={() => setActiveId(tab.id)}
                 sx={{
-                  px: 1.75,
+                  width: "fit-content",
+                  px: 2,
                   py: 1,
                   borderRadius: 999,
                   border: "1px solid",
@@ -106,7 +169,7 @@ export function ProductPreviewSection() {
                   fontSize: 14,
                   fontWeight: 600,
                   cursor: "pointer",
-                  fontFamily: "inherit",
+                  textWrap: "nowrap",
                 }}
               >
                 {tab.label}
@@ -116,7 +179,7 @@ export function ProductPreviewSection() {
         </Stack>
 
         <Box sx={{ width: "100%", height: { xs: 250, md: 650 }, position: "relative", borderRadius: "24px", overflow: "hidden" }}>
-          <Image src="/main_page.png" alt="Product Preview" fill />
+          <Image src="/" alt="Product Preview" fill />
         </Box>
 
         <Stack spacing={0.5} sx={{ mt: 2 }}>

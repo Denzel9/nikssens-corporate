@@ -1,4 +1,4 @@
-export type ArticleAudience = "brand" | "creator" | "agency" | "prime";
+export type ArticleAudience = "brand" | "creator" | "agency" | "manager" | "prime";
 
 export type ArticleSection = {
   title: string;
@@ -25,5 +25,6 @@ export const audienceLabels: Record<ArticleAudience, string> = {
   brand: "Бренд",
   creator: "Исполнитель",
   agency: "Агентство",
+  manager: "Менеджер",
   prime: "Prime",
 };

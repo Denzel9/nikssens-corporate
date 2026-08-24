@@ -9,7 +9,7 @@ import { MetricsSection } from "@/widgets/metrics-section";
 import { ProductPreviewSection } from "@/widgets/product-preview";
 import { OnboardingSection } from "@/widgets/onboarding-section";
 import { TrustSection } from "@/widgets/trust-section";
-import { IntegrationsSection } from "@/widgets/integrations-section";
+// import { IntegrationsSection } from "@/widgets/integrations-section";
 import { PricingTeaserSection } from "@/widgets/pricing-teaser";
 import { StorySection } from "@/widgets/story-section";
 import { GuidesTeaserSection } from "@/widgets/guides-teaser";
@@ -30,7 +30,7 @@ export function HomePage() {
       <ProductPreviewSection />
       <OnboardingSection />
       <TrustSection />
-      <IntegrationsSection />
+      {/* <IntegrationsSection /> */}
       <PricingTeaserSection />
       <StorySection />
       <GuidesTeaserSection />

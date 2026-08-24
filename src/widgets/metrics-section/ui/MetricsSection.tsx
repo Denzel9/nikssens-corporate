@@ -11,8 +11,8 @@ import type { SxProps, Theme } from "@mui/material/styles";
 const metrics = [
   { value: "1 контур", label: "вместо множества инструментов" },
   { value: "5 шагов", label: "от брифа до публикации" },
-  { value: "2 стороны", label: "бренд и исполнитель в одном сценарии" },
-  { value: "2 роли", label: "владелец страницы и администратор" },
+  { value: "2 стороны", label: "бренд и исполнители в одном сценарии" },
+  { value: "3 роли", label: "владелец, менеджер и администратор" },
 ];
 
 const MetricCard = ({ metric, sx }: { metric: typeof metrics[number], sx?: SxProps<Theme> }) => {
@@ -50,7 +50,7 @@ export function MetricsSection() {
       <Container maxWidth="lg">
         <SectionHeading
           title="Ценность в цифрах"
-          description="Не отзывы — опорные свойства продукта, которые экономят время менеджеру и исполнителю."
+          description="Возможности платформы, которые экономят время заказчику и исполнителю."
         />
 
         {/* only desktop view */}

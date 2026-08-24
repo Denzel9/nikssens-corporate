@@ -6,7 +6,7 @@ import Container from "@mui/material/Container";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import { authLink } from "@/shared/config";
-import { DemoModalTrigger, GradientButton, OutlinedPillButton } from "@/shared/ui";
+import { GradientButton, OutlinedPillButton } from "@/shared/ui";
 
 export function FinalCtaSection() {
   return (
@@ -41,7 +41,7 @@ export function FinalCtaSection() {
                 <GradientButton href={authLink.href}>
                   Войти
                 </GradientButton>
-                <DemoModalTrigger label="2 минуты о продукте" />
+                {/* <DemoModalTrigger label="2 минуты о продукте" /> */}
                 <OutlinedPillButton component={NextLink} href="/contacts">
                   Связаться
                 </OutlinedPillButton>

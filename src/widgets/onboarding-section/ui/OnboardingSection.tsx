@@ -10,7 +10,7 @@ import CheckRoundedIcon from "@mui/icons-material/CheckRounded";
 import { authLink } from "@/shared/config";
 import { GradientButton, SectionHeading } from "@/shared/ui";
 
-type RoleId = "brand" | "creator";
+type RoleId = "brand" | "creator" | "manager";
 
 const checklists: Record<
   RoleId,
@@ -34,6 +34,16 @@ const checklists: Record<
       { time: "3 мин", text: "Найти заказ фильтрами или поиском на главной" },
       { time: "2 мин", text: "Откликнуться и проверить статус в «Мои отклики»" },
       { time: "2 мин", text: "После принятия — задача, чат и сдача работы" },
+    ],
+  },
+  manager: {
+    label: "Менеджер",
+    items: [
+      { time: "1 мин", text: "Войти и подтвердить email" },
+      { time: "2 мин", text: "Принять приглашение в команду бренда" },
+      { time: "2 мин", text: "В «Настройки → Компании» переключиться на нужный бренд" },
+      { time: "3 мин", text: "Открыть CRM: задачи, календарь и чаты от лица компании" },
+      { time: "2 мин", text: "Взять задачу в работу или ответить на отклик" },
     ],
   },
 };

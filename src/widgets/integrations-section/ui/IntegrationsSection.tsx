@@ -23,7 +23,7 @@ export function IntegrationsSection() {
       <Container maxWidth="lg">
         <SectionHeading
           title="Платформы в объявлении"
-          description="В брифе указываете, где выходит коллаб: формат, бюджет и площадки — исполнитель сразу видит требования."
+          description="В брифе указываете, рамки сотрудничества: формат, бюджет и площадки — исполнитель сразу видит требования."
         />
         <Stack
           direction="row"

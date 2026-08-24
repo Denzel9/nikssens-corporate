@@ -10,16 +10,16 @@ import CheckRoundedIcon from "@mui/icons-material/CheckRounded";
 import { SectionHeading } from "@/shared/ui";
 
 const before = [
+  "Поиск в социальных сетях",
   "Бриф в Google Docs",
   "Договорённости в Telegram",
   "Дедлайны в Excel",
   "Отчётность размазана по чатам",
-  "Поиск в социальных сетях",
 ];
 
 const after = [
+  "Гибкий поиск на платформе",
   "Объявление с брифом в одном посте",
-  "Отклики и статусы в продукте",
   "CRM задач, мультизадачи и календарь",
   "Публикация и отчёт в одном контуре",
   "Мультиаккаунт для команд и агентств",
@@ -31,7 +31,7 @@ export function PainSection() {
       <Container maxWidth="lg">
         <SectionHeading
           title="Вместо чатов и таблиц"
-          description="Рынок часто живёт в Соц. сеть + Excel + Google Docs. Nikssens собирает цикл коллаборации в один продукт."
+          description="Рынок часто живёт в Соц. сеть + Excel + Google Docs. Nikssens собирает цикл сотрудничества в один продукт."
         />
         <Grid container spacing={2.5}>
           <Grid size={{ xs: 12, md: 6 }}>
