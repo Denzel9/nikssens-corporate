@@ -61,7 +61,6 @@ export function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
-                  size="small"
                   sx={{
                     color: "text.secondary",
                     border: "1px solid",
