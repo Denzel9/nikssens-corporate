@@ -26,7 +26,10 @@ export function CookieConsentBanner() {
 
   useEffect(() => {
     if (getCookieConsent()) return;
-    setVisible(true);
+
+    setTimeout(() => {
+      setVisible(true);
+    }, 0);
   }, []);
 
   const saveConsent = (value: CookieConsentValue) => {
